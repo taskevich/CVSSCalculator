@@ -11,7 +11,7 @@ pip install .
 
 Установка из pypi
 ```shell
-pip install cvss_calculator
+pip install cvss-calculator
 ```
 
 ## Использование

@@ -1,1 +1,4 @@
 .idea
+build
+src/cvss_calculator.egg-info
+dist
