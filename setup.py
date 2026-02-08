@@ -6,7 +6,7 @@ if __name__ == "__main__":
         packages=find_packages("src", include=["cvss_calculator*"]),
         package_dir={"": "src"},
         description="Python library that allows you to calculate score cvss 2 and 3 versions by fstec",
-        version="3.0",
+        version="3.1",
         author="taskevich",
         url="https://github.com/taskevich/CVSSCalculator",
     )
