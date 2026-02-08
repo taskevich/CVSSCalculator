@@ -1,3 +1,5 @@
+from cvss_calculator.enums.level import CVSSLevelsEnum
+from cvss_calculator.models.cvss import CVSSModel
 from utils import round_up
 
 
@@ -20,7 +22,7 @@ class CVSS3:
     def __init__(self):
         self.params: dict[str, float | bool | str] = {}
 
-    def calc(self, cvss: str) -> float | None:
+    def calc(self, cvss: str) -> CVSSModel | None:
         """
         Расчет CVSS v3 base score.
         Возвращает None, если вектор невалиден.
@@ -30,7 +32,13 @@ class CVSS3:
             self._parse_vector(cvss.split("/"))
             if not self.REQUIRED.issubset(self.params):
                 return None
-            return self._calc_base_metrics()
+            score = self._calc_base_metrics()
+            return CVSSModel(
+                score=score,
+                level=CVSSLevelsEnum.get_level(score),
+                compiled_level=CVSSLevelsEnum.stringify(score),
+                version="3.0"
+            )
         except (KeyError, ValueError):
             return None
 
