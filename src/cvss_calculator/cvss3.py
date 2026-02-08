@@ -1,6 +1,6 @@
 from cvss_calculator.enums.level import CVSSLevelsEnum
 from cvss_calculator.models.cvss import CVSSModel
-from utils import round_up
+from cvss_calculator.utils import round_up
 
 
 class CVSS3:

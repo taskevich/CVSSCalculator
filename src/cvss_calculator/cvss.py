@@ -1,5 +1,5 @@
-from cvss2 import CVSS2
-from cvss3 import CVSS3
+from cvss_calculator.cvss2 import CVSS2
+from cvss_calculator.cvss3 import CVSS3
 from cvss_calculator.models.cvss import CVSSModel
 
 
