@@ -1,11 +1,12 @@
 from cvss2 import CVSS2
 from cvss3 import CVSS3
+from cvss_calculator.models.cvss import CVSSModel
 
 
 class CVSSCalculator:
 
     @staticmethod
-    def calc(cvss: str):
+    def calc(cvss: str) -> CVSSModel | None:
         """
         Попытка расчета cvss оценки
         по вектору.
